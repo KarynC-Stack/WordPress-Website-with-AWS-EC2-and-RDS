@@ -5,24 +5,26 @@
 3. Install and configure WordPress 
 
 **Connect to your EC2 instance through SSH (Use CLI or EC2 connect)**
-''' for CLI paste this command
+```bash
 ssh -i wordpress-key.pem ec2-user@public-ip-address
-'''
+```
 
 **Update packages on the EC2 instance** 
- '''bash
+ ```bash
 sudo yum update -y
-'''
+```
 
 **Install, start, and enable the Apache web server**
-'''bash
+``bash
 sudo yum install -y httpd
 sudo systemctl start httpd
 sudo systemctl enable httpd
-'''
+```
 
 **Install PHP Software**
- '''bash
+ ```bash
+sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+```
 
 **Install MySQL client**
 '''bash 
@@ -41,9 +43,9 @@ CREATE USER 'adminuser' IDENTIFIED BY 'Brownie25';
 GRANT ALL PRIVILEGES ON wordpress.* TO adminuser;
 FLUSH PRIVILEGES;
 Exit
-'''
+```
 
-**Download the WordPress template and unzip the WordPress**
+**Download the WordPress template and unzip the WordPress **
 ```bash
 wget https://wordpress.org/latest.tar.gz
 tar -xzf latest.tar.gz
@@ -82,7 +84,7 @@ define( 'DB_HOST', 'rds-endpoint-name' );
 
 **Go to the below link to get information on updating the wp-config file**
 ```bash
-https://api.wordpress.org/secret-key/1.1/salt/
+[https://api.wordpress.org/secret-key/1.1/salt/]
 ```
 
 **Configure the Authentication Unique Keys and Salts and update the file**
