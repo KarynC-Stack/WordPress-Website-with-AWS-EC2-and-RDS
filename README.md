@@ -15,7 +15,7 @@ sudo yum update -y
 ```
 
 **Install, start, and enable the Apache web server**
-``bash
+```bash
 sudo yum install -y httpd
 sudo systemctl start httpd
 sudo systemctl enable httpd
@@ -27,12 +27,12 @@ sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
 ```
 
 **Install MySQL client**
-'''bash 
+```bash 
 sudo yum install -y mysql
-'''
+```
 
 **Connect to RDS database using the RDS database endpoint**
-``bash
+```bash
 mysql -h <rds-database-endpoint> -P <port-no> -u <user> -p <password>
 ```
 
@@ -45,7 +45,7 @@ FLUSH PRIVILEGES;
 Exit
 ```
 
-**Download the WordPress template and unzip the WordPress **
+**Download the WordPress template and unzip the WordPress**
 ```bash
 wget https://wordpress.org/latest.tar.gz
 tar -xzf latest.tar.gz
@@ -67,7 +67,7 @@ vim wp-config.php
 ```
 
 **Edit the database name, username, password, and hostname. Replace with details used to launch your RDS instance.**
-``bash
+```bash
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'database_name_here' );
@@ -115,4 +115,4 @@ sudo cp -r wordpress/* /var/www/html/
 sudo service httpd restart
 ```
 
-**Paste your public ip address on your web browse to go to the wordpress configuration page
+**Paste your public ip address on your web browse to go to the wordpress configuration page**
